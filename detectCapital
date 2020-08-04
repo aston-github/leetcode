@@ -1,0 +1,38 @@
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lower = "abcdefghijklmnopqrstuvwxyz";
+        if (word.length() ==1){
+            return true;
+        }
+        if (lower.contains(""+word.charAt(0))){
+            for(int i = 1;i<word.length();i++){
+                if (upper.contains(""+word.charAt(i))){
+                    // System.out.print("HERE");
+                    return false;
+                }
+            }
+            return true;
+        }
+        else {
+//             first letter cap and rest not
+            if (lower.contains(""+word.charAt(1))){
+                for(int i = 2;i<word.length();i++){
+                if (upper.contains(""+word.charAt(i))){
+                    // System.out.print("HERE");
+                    return false;
+                }
+            }
+            }
+            else{
+                for(int i = 1;i<word.length();i++){
+                if (lower.contains(""+word.charAt(i))){
+                    // System.out.print("HERE");
+                    return false;
+            }
+        }
+            }
+        }
+        return true;
+    }
+    }
